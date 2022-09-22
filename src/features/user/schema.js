@@ -6,8 +6,14 @@ const userDefs = gql`
     isAdmin: Boolean
   }
 
+  type TipConcedii {
+    id: Int!
+    nume: String!
+  }
+
   extend type Query {
     userData: UserInfo!
+    concediiData: TipConcedii!
   }
 
   extend type Mutation {

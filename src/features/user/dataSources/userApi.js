@@ -6,8 +6,13 @@ class UserApi extends ApiRESTDataSource {
   }
 
   async userData() {
-    const userData = { id: 1, isAdmin: true }
+    const userData = ''
     return userData
+  }
+
+  async concediiData() {
+    const concediiData = (this.baseURL += 'CerereConcediu/GetTipConcediu')
+    return concediiData
   }
 
   async authenticateUser(userName, password) {

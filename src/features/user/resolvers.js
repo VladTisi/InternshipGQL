@@ -23,4 +23,13 @@ const userResolvers = {
   }
 }
 
-module.exports = userResolvers
+const CerereConcediiResolvers = {
+  Query: {
+    concediiData: async (_, __, { dataSources }, _info) => {
+      const data = await dataSources.userApi.concediiData()
+      return data
+    }
+  }
+}
+
+module.exports = { userResolvers, CerereConcediiResolvers }
