@@ -2,7 +2,7 @@ const { gql } = require('apollo-server-koa')
 
 const userData = gql`
   type person {
-    id: Int!
+    id: Int
     nume: String
     prenume: String
     echipa: String
@@ -16,7 +16,7 @@ const userData = gql`
     poza: String
   }
   extend type Query {
-    user(id: Int): person
+    user(id: Int): [person]
   }
 `
 

@@ -6,7 +6,7 @@ class userDataApi extends ApiRESTDataSource {
   }
 
   async getUser(id) {
-    const data = await this.get(`HomePage/GetDateAngajat?Id=${id}`)
+    const data = await this.get(`/HomePage/GetDateAngajat?Id=${id}`)
     return data
   }
 }
