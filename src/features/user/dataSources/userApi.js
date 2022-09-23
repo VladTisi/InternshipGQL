@@ -6,7 +6,7 @@ class UserApi extends ApiRESTDataSource {
   }
 
   async userData() {
-    const userData = ''
+    const userData = { id: 1, isAdmin: true }
     return userData
   }
 
