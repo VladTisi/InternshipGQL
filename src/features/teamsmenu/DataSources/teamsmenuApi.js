@@ -6,9 +6,8 @@ class EmployeeTeamApi extends ApiRESTDataSource {
   }
 
   async getTeam(id) {
-    console.log('1')
     const data = await this.get(`Echipa/GetEchipa?angajatId=${id}`)
-    console.log('2')
+
     return data
   }
 }
