@@ -8,7 +8,7 @@ const { join } = require('path')
 const { userResolvers, CerereConcediiResolvers } = require('../features/user/resolvers')
 const userDefs = require('../features/user/schema')
 
-const { teamsmenuResolvers } = require('../features/teamsmenu/resolvers')
+const teamsmenuResolvers = require('../features/teamsmenu/resolvers')
 const teamsmenuDefs = require('../features/teamsmenu/schema')
 
 const oldTypeDefs = []

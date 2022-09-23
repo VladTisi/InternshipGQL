@@ -13,6 +13,6 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   // You need to initialize you datasources here e.g.: dataSources.userApi.initialize({ context })
   dataSources.userApi.initialize({ context })
   dataSources.userDb.initialize({ context: { dbInstance } })
-  dataSources.teamsmenuApi.initialize({ context })
+  dataSources.EmployeeTeamApi.initialize({ context })
   return dataSources
 }
