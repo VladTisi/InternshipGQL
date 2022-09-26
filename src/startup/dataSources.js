@@ -5,6 +5,7 @@ const EmployeeTeamApi = require('../features/teamsmenu/DataSources/teamsmenuApi'
 const EmployeeTeamBBApi = require('../features/teamBB/DataSources/teamsmenuApi')
 const EmployeeTeamStrangerApi = require('../features/teamStranger/DataSources/teamsmenuApi')
 const userDataApi = require('../features/userData/dataSources/userDataApi')
+const changePasswordApi = require('../features/changePassword/dataSources/changePasswordApi')
 const EmployeeAllEmpApi = require('../features/allemp/DataSources/teamsmenuApi')
 
 module.exports.getDataSources = () => ({
@@ -16,7 +17,8 @@ module.exports.getDataSources = () => ({
   EmployeeTeamBBApi: new EmployeeTeamBBApi(),
   EmployeeAllEmpApi: new EmployeeAllEmpApi(),
   EmployeeTeamStrangerApi: new EmployeeTeamStrangerApi(),
-  userDataApi: new userDataApi()
+  userDataApi: new userDataApi(),
+  changePasswordApi: new changePasswordApi()
 })
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
@@ -29,5 +31,6 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.EmployeeTeamStrangerApi.initialize({ context })
   dataSources.concediiPersonaleApi.initialize({ context })
   dataSources.userDataApi.initialize({ context })
+  dataSources.changePasswordApi.initialize({ context })
   return dataSources
 }
