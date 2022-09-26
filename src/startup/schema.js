@@ -11,6 +11,12 @@ const userDefs = require('../features/user/schema')
 const teamsmenuResolvers = require('../features/teamsmenu/resolvers')
 const teamsmenuDefs = require('../features/teamsmenu/schema')
 
+const teamBBResolvers = require('../features/teamBB/resolvers')
+const teamBBDefs = require('../features/teamBB/schema')
+
+const teamStrangerResolvers = require('../features/teamStranger/resolvers')
+const teamStrangerDefs = require('../features/teamStranger/schema')
+
 const userDataResolvers = require('../features/userData/resolvers')
 const userDataDefs = require('../features/userData/schema')
 
@@ -23,6 +29,8 @@ const concediiPersonaleResolvers = require('../features/concedipersonale/resolve
 const resolvers = merge(
   userResolvers,
   userDataResolvers,
+  teamBBResolvers,
+  teamStrangerResolvers,
   CerereConcediiResolvers,
   concediiPersonaleResolvers,
   teamsmenuResolvers
@@ -34,6 +42,8 @@ const typeDefs = [
   ...oldTypeDefs,
   userDefs,
   teamsmenuDefs,
+  teamBBDefs,
+  teamStrangerDefs,
   concediiPersonaleDefs,
   userDataDefs
 ]
