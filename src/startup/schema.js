@@ -14,6 +14,9 @@ const teamsmenuDefs = require('../features/teamsmenu/schema')
 const userDataResolvers = require('../features/userData/resolvers')
 const userDataDefs = require('../features/userData/schema')
 
+const changePasswordResolvers = require('../features/changePassword/resolvers')
+const changePasswordDefs = require('../features/changePassword/schema')
+
 const oldTypeDefs = []
 const sources = loadTypedefsSync(join(__dirname, '../**/*.graphql'), {
   loaders: [new GraphQLFileLoader()]
@@ -25,7 +28,8 @@ const resolvers = merge(
   userDataResolvers,
   CerereConcediiResolvers,
   concediiPersonaleResolvers,
-  teamsmenuResolvers
+  teamsmenuResolvers,
+  changePasswordResolvers
 )
 
 const concediiPersonaleDefs = require('../features/concedipersonale/schema')
@@ -35,7 +39,8 @@ const typeDefs = [
   userDefs,
   teamsmenuDefs,
   concediiPersonaleDefs,
-  userDataDefs
+  userDataDefs,
+  changePasswordDefs
 ]
 
 module.exports = makeExecutableSchema({ typeDefs, resolvers })
