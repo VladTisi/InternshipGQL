@@ -5,6 +5,7 @@ const teamsmenuDefs = gql`
     id: Int!
     nume: String!
     prenume: String!
+    poza: String
     functia: String!
   }
 

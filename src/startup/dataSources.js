@@ -5,6 +5,8 @@ const EmployeeTeamApi = require('../features/teamsmenu/DataSources/teamsmenuApi'
 const EmployeeTeamBBApi = require('../features/teamBB/DataSources/teamsmenuApi')
 const EmployeeTeamStrangerApi = require('../features/teamStranger/DataSources/teamsmenuApi')
 const userDataApi = require('../features/userData/dataSources/userDataApi')
+const EmployeeAllEmpApi = require('../features/allemp/DataSources/teamsmenuApi')
+
 module.exports.getDataSources = () => ({
   // Instantiate your data sources here. e.g.: userApi: new UserApi()
   userApi: new UserApi(),
@@ -12,6 +14,7 @@ module.exports.getDataSources = () => ({
   concediiPersonaleApi: new ConcediiPersonaleApi(),
   EmployeeTeamApi: new EmployeeTeamApi(),
   EmployeeTeamBBApi: new EmployeeTeamBBApi(),
+  EmployeeAllEmpApi: new EmployeeAllEmpApi(),
   EmployeeTeamStrangerApi: new EmployeeTeamStrangerApi(),
   userDataApi: new userDataApi()
 })
@@ -22,6 +25,7 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.userDb.initialize({ context: { dbInstance } })
   dataSources.EmployeeTeamApi.initialize({ context })
   dataSources.EmployeeTeamBBApi.initialize({ context })
+  dataSources.EmployeeAllEmpApi.initialize({ context })
   dataSources.EmployeeTeamStrangerApi.initialize({ context })
   dataSources.concediiPersonaleApi.initialize({ context })
   dataSources.userDataApi.initialize({ context })
