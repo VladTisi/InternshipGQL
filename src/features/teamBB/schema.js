@@ -1,16 +1,15 @@
 const { gql } = require('apollo-server-koa')
 
-const teamsmenuDefs = gql`
+const teamBBDefs = gql`
   type Employee {
     id: Int!
     nume: String!
     prenume: String!
-    poza: String
     functia: String!
   }
 
   extend type Query {
-    team(id: Int): [Employee]
+    teamBB(id: Int): [Employee]
   }
 `
-module.exports = teamsmenuDefs
+module.exports = teamBBDefs
