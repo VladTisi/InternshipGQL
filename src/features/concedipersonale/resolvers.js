@@ -11,6 +11,10 @@ const concediiPersonaleResolvers = {
     asteptare: async (_, { id }, { dataSources }) => {
       const value = await dataSources.concediiPersonaleApi.getAsteptare(id)
       return value
+    },
+    all: async (_, { id }, { dataSources }) => {
+      const value = await dataSources.concediiPersonaleApi.getAll(id)
+      return value
     }
   }
 }

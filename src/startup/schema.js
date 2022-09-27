@@ -8,6 +8,9 @@ const { join } = require('path')
 const { userResolvers, CerereConcediiResolvers } = require('../features/user/resolvers')
 const userDefs = require('../features/user/schema')
 
+const gestionareConcediiResolvers = require('../features/gestionareConcedii/resolvers')
+const gestionareConcediiDefs = require('../features/gestionareConcedii/schema')
+
 const teamsmenuResolvers = require('../features/teamsmenu/resolvers')
 const teamsmenuDefs = require('../features/teamsmenu/schema')
 
@@ -40,6 +43,7 @@ const resolvers = merge(
   teamStrangerResolvers,
   CerereConcediiResolvers,
   concediiPersonaleResolvers,
+  gestionareConcediiResolvers,
   teamsmenuResolvers,
   changePasswordResolvers
 )
@@ -54,6 +58,7 @@ const typeDefs = [
   allempDefs,
   teamStrangerDefs,
   concediiPersonaleDefs,
+  gestionareConcediiDefs,
   userDataDefs,
   changePasswordDefs
 ]

@@ -16,6 +16,10 @@ class ConcediiPersonaleApi extends ApiRESTDataSource {
     const data = this.get(`ConcediiPersonale/PendingHolidays?Id=${id}`)
     return data
   }
+  async getAll(id) {
+    const data = this.get(`ConcediiPersonale/AllHolidays?Id=${id}`)
+    return data
+  }
 }
 
 module.exports = ConcediiPersonaleApi
