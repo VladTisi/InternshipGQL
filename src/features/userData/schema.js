@@ -5,8 +5,8 @@ const userData = gql`
     id: Int
     nume: String
     prenume: String
-    echipa: String
-    functie: String
+    idEchipa: Int
+    idFunctie: Int
     sex: String
     email: String
     numarTelefon: String
@@ -16,12 +16,17 @@ const userData = gql`
     #Poza: String
   }
 
+  type echipe {
+    id: Int
+    nume: String
+  }
+
   input personUpd {
     id: Int
     nume: String
     prenume: String
-    echipa: Ech
-    functie: Func
+    idEchipa: Int
+    idFunctie: Int
     sex: String
     email: Login
     numarTelefon: String
