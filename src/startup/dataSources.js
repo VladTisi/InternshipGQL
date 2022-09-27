@@ -7,6 +7,7 @@ const EmployeeTeamStrangerApi = require('../features/teamStranger/DataSources/te
 const userDataApi = require('../features/userData/dataSources/userDataApi')
 const changePasswordApi = require('../features/changePassword/dataSources/changePasswordApi')
 const EmployeeAllEmpApi = require('../features/allemp/DataSources/teamsmenuApi')
+const GestionareConcediiApi = require('../features/gestionareConcedii/datasources/gestionareConcediiApi')
 const echipeApi = require('../features/echipe/dataSources/echipeApi')
 
 module.exports.getDataSources = () => ({
@@ -20,7 +21,8 @@ module.exports.getDataSources = () => ({
   EmployeeTeamStrangerApi: new EmployeeTeamStrangerApi(),
   userDataApi: new userDataApi(),
   changePasswordApi: new changePasswordApi(),
-  echipeApi: new echipeApi()
+  echipeApi: new echipeApi(),
+  gestionareConcediiApi: new GestionareConcediiApi()
 })
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
@@ -35,5 +37,6 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.userDataApi.initialize({ context })
   dataSources.changePasswordApi.initialize({ context })
   dataSources.echipeApi.initialize({ context })
+  dataSources.gestionareConcediiApi.initialize({ context })
   return dataSources
 }

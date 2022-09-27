@@ -5,8 +5,8 @@ class UserApi extends ApiRESTDataSource {
     super()
   }
 
-  async userData() {
-    const userData = { id: 1, isAdmin: true }
+  async userData(email) {
+    const userData = this.get(`LogAuten/GeParolaDecriptata?email=${email}`)
     return userData
   }
 
