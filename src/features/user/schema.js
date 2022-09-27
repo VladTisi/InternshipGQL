@@ -2,8 +2,7 @@ const { gql } = require('apollo-server-koa')
 
 const userDefs = gql`
   type UserInfo {
-    id: Int!
-    isAdmin: Boolean
+    password: String!
   }
 
   type TipConcedii {
@@ -12,7 +11,7 @@ const userDefs = gql`
   }
 
   extend type Query {
-    userData: UserInfo!
+    userData(email: String!): String
     concediiData: TipConcedii!
   }
 

@@ -3,8 +3,8 @@ const { DataSource } = require('apollo-datasource')
 const changePasswordResolvers = {
   Query: {
     Password: async (_, { id }, { dataSources }) => {
-      const passwordData = await dataSources.changePasswordApi.getPassword(id)
-      return passwordData
+      const data = await dataSources.changePasswordApi.getPassword(id)
+      return data
     }
   },
   Mutation: {
