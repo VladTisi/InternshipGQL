@@ -6,7 +6,7 @@ class UserApi extends ApiRESTDataSource {
   }
 
   async userData(email) {
-    const userData = this.get(`LogAuten/GeParolaDecriptata?email=${email}`)
+    const userData = this.get(`LogAuten/GetUser?email=${email}`)
     return userData
   }
 
@@ -16,8 +16,8 @@ class UserApi extends ApiRESTDataSource {
   }
 
   async authenticateUser(userName, password) {
-    if (userName !== 'Administrator' || password !== 'a') return false
-    else return true
+    const userData = this.get(`LogAuten/GetParolaDecriptata?email=${userName}&parola=${password}`)
+    return userData
   }
 }
 
