@@ -16,6 +16,9 @@ const concediiPersonaleDefs = gql`
   extend type Query {
     asteptare(id: Int): [Concediu]
   }
+  extend type Query {
+    all(id: Int): [Concediu]
+  }
 `
 
 module.exports = concediiPersonaleDefs
