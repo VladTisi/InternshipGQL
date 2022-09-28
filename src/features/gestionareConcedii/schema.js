@@ -14,6 +14,10 @@ const gestionareConcediiDefs = gql`
   extend type Query {
     concedii(id: Int): [Concedius]
   }
+  extend type Mutation {
+    aprobaconcediu(id: Int): Void
+    refuzaconcediu(id: Int): Void
+  }
 `
 
 module.exports = gestionareConcediiDefs
