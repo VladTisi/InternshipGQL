@@ -5,11 +5,14 @@ const { loadTypedefsSync } = require('@graphql-tools/load')
 const { GraphQLFileLoader } = require('@graphql-tools/graphql-file-loader')
 const { join } = require('path')
 
-const { userResolvers, CerereConcediiResolvers } = require('../features/user/resolvers')
+const userResolvers = require('../features/user/resolvers')
 const userDefs = require('../features/user/schema')
 
 const teamsmenuResolvers = require('../features/teamsmenu/resolvers')
 const teamsmenuDefs = require('../features/teamsmenu/schema')
+
+const CerereConcediiResolvers = require('../features/cerereconcediu/resolvers')
+const cerereConcediuDefs = require('../features/cerereconcediu/schema')
 
 const teamBBResolvers = require('../features/teamBB/resolvers')
 const teamBBDefs = require('../features/teamBB/schema')
@@ -35,10 +38,10 @@ const concediiPersonaleResolvers = require('../features/concedipersonale/resolve
 const resolvers = merge(
   userResolvers,
   userDataResolvers,
+  CerereConcediiResolvers,
   teamBBResolvers,
   allempResolvers,
   teamStrangerResolvers,
-  CerereConcediiResolvers,
   concediiPersonaleResolvers,
   teamsmenuResolvers,
   changePasswordResolvers
@@ -50,6 +53,7 @@ const typeDefs = [
   ...oldTypeDefs,
   userDefs,
   teamsmenuDefs,
+  cerereConcediuDefs,
   teamBBDefs,
   allempDefs,
   teamStrangerDefs,

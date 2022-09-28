@@ -32,4 +32,4 @@ const CerereConcediiResolvers = {
   }
 }
 
-module.exports = { userResolvers, CerereConcediiResolvers }
+module.exports = userResolvers
