@@ -12,6 +12,7 @@ const echipeApi = require('../features/echipe/dataSources/echipeApi')
 const emailApi = require('../features/email/dataSources/emailApi')
 const inlocuitoriApi = require('../features/inlocuitori/dataSources/inlocuitoriApi')
 const concediuApi = require('../features/cerereconcediu/datasources/concediuApi')
+const tipConcediuApi = require('../features/tipConcediu/dataSources/tipConcediuApi')
 
 module.exports.getDataSources = () => ({
   // Instantiate your data sources here. e.g.: userApi: new UserApi()
@@ -28,7 +29,8 @@ module.exports.getDataSources = () => ({
   echipeApi: new echipeApi(),
   gestionareConcediiApi: new GestionareConcediiApi(),
   emailApi: new emailApi(),
-  inlocuitoriApi: new inlocuitoriApi()
+  inlocuitoriApi: new inlocuitoriApi(),
+  tipConcediuApi: new tipConcediuApi()
 })
 
 module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
@@ -47,5 +49,6 @@ module.exports.initializedDataSources = (context, dbInstance, dataSources) => {
   dataSources.emailApi.initialize({ context })
   dataSources.inlocuitoriApi.initialize({ context })
   dataSources.concediuApi.initialize({ context })
+  dataSources.tipConcediuApi.initialize({ context })
   return dataSources
 }
