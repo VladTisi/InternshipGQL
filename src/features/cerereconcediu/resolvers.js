@@ -23,6 +23,10 @@ const CerereConcediiResolvers = {
     ZileRamaseNeplatite: async (_, { AngajatId }, { dataSources }) => {
       const data = await dataSources.concediuApi.ZileRamaseNeplatite(AngajatId)
       return data
+    },
+    GetConcediiInlocuitor: async (_, { input }, { dataSources }) => {
+      const data = await dataSources.concediuApi.GetConcediiInlocuitor(input)
+      return data
     }
   }
 }
