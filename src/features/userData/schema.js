@@ -28,7 +28,7 @@ const userData = gql`
     idEchipa: Int
     idFunctie: Int
     sex: String
-    email: Login
+    email: String
     numarTelefon: String
     salariu: Int
     overtime: Int

@@ -11,12 +11,8 @@ class userDataApi extends ApiRESTDataSource {
   }
 
   async userUpdated(input) {
-    try {
-      const data = await this.post('MeniuModificareDateAngajat/UpdateDate', { ...input }, this.option)
-      return data
-    } catch {
-      return 'baddd bad'
-    }
+    const data = await this.post('MeniuModificareDateAngajat/UpdateDate', input, this.option)
+    return data
   }
 }
 
