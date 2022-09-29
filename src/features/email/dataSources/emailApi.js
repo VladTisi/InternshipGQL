@@ -7,7 +7,7 @@ class emailApi extends ApiRESTDataSource {
 
   async getEmail(id) {
     const data = await this.get(`/HomePage/GetEmailFromId?Id=${id}`)
-    return data
+    return data[0]
   }
   async updateEmail(input) {
     try {

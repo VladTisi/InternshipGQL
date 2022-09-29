@@ -1,14 +1,14 @@
 const { gql } = require('apollo-server-koa')
 
-const Echipe = gql`
-  type Echipe {
+const Functii = gql`
+  type Functii {
     id: Int
     nume: String
   }
 
   extend type Query {
-    Echipe: [Echipe]
+    Functii: [Functii]
   }
 `
 
-module.exports = Echipe
+module.exports = Functii
