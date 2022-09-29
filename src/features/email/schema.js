@@ -1,7 +1,7 @@
 const { gql } = require('apollo-server-koa')
 
 const emailData = gql`
-  type email {
+  type Email {
     id: Int
     email: String
   }
@@ -12,7 +12,7 @@ const emailData = gql`
   }
 
   extend type Query {
-    email(id: Int): [email]
+    email(id: Int): Email
   }
   type AsyncResult {
     result: Void
