@@ -10,12 +10,13 @@ const changePasswordDefs = gql`
     newPassword: String
     angajatId: Int
   }
+  input GetPassword {
+    oldPassword: String
+    angajatId: Int
+  }
 
   extend type Query {
-    Password(AngajatId: Int): String
-  }
-  extend type Mutation {
-    newPassword(password: String, AngajatId: Int): String
+    password(input: GetPassword): Boolean
   }
 
   extend type Mutation {

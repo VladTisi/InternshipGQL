@@ -5,25 +5,18 @@ class changePasswordApi extends ApiRESTDataSource {
     super()
   }
 
-  async getPassword(AngajatId) {
-    const data = await this.get(`SchimbareParola/GetPassword?AngajatId=${AngajatId}`)
+  async getPassword(GetPassword) {
+    const data = await this.get(
+      `SchimbareParola/GetPasswordBun?AngajatId=${GetPassword.angajatId}&parola=${GetPassword.oldPassword}`
+    )
     return data
   }
 
   async postChangePassword(UpdatePassword) {
     const data = await this.post(
-      `SchimbareParola/UpdatePassword?password=${UpdatePassword.newPassword}&AngajatId=${UpdatePassword.angajatId}`
+      `SchimbareParola/UpdatePasswordBun?password=${UpdatePassword.newPassword}&AngajatId=${UpdatePassword.angajatId}`
     )
     return true
-  }
-
-  async newPassword(password, AngajatId) {
-    try {
-      const data = await this.post(`SchimbareParola/UpdatePassword?password=${password}&AngajatId=${AngajatId}`)
-      return 'a mers'
-    } catch {
-      return 'nu a mers'
-    }
   }
 }
 

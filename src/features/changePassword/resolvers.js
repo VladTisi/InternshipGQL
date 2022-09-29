@@ -2,8 +2,8 @@ const { DataSource } = require('apollo-datasource')
 
 const changePasswordResolvers = {
   Query: {
-    Password: async (_, { AngajatId }, { dataSources }) => {
-      const data = await dataSources.changePasswordApi.getPassword(AngajatId)
+    password: async (_, { input }, { dataSources }) => {
+      const data = await dataSources.changePasswordApi.getPassword(input)
       return data
     }
   },
