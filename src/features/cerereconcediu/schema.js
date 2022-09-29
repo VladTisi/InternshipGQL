@@ -10,15 +10,22 @@ const cerereConcediuDefs = gql`
     comentarii: String
   }
 
+  input ConcediuInlocuitor {
+    angajatId: Int
+    data_inceput: DateTime
+    data_sfarsit: DateTime
+  }
+
   extend type Query {
     ZileRamaseOdihna(AngajatId: Int): Int
     ZileRamaseDeces(AngajatId: Int): Int
     ZileRamaseMedical(AngajatId: Int): Int
     ZileRamaseNeplatite(AngajatId: Int): Int
+    GetConcediiInlocuitor(input: ConcediuInlocuitor): Boolean
   }
 
   extend type Mutation {
-    insertCerereConcediu(input: CerereConcediu!): Boolean
+    insertCerereConcediu(input: ConcediuInlocuitor!): Boolean
   }
 `
 

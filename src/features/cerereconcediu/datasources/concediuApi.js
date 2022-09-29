@@ -27,6 +27,13 @@ class concediuApi extends ApiRESTDataSource {
     const concediiData = await this.post(`CerereConcediu/InsertConcediuGQL`, input)
     return true
   }
+
+  async GetConcediiInlocuitor(input) {
+    const concedii = await this.get(
+      `CerereConcediu/GetConcediuDeja?angajatId=${input.angajatId}&Inceput=${input.data_inceput}&Sfarsit=${input.data_sfarsit}`
+    )
+    return concedii
+  }
 }
 
 module.exports = concediuApi

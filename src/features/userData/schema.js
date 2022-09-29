@@ -13,7 +13,7 @@ const userData = gql`
     salariu: Int
     overtime: Int
     dataAngajarii: DateTime
-    #Poza: String
+    poza: String
   }
 
   type echipe {
@@ -33,7 +33,7 @@ const userData = gql`
     salariu: Int
     overtime: Int
     dataAngajarii: DateTime
-    #Poza: String
+    poza: String
   }
   input Func {
     id: Int!
