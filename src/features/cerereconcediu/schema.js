@@ -10,6 +10,13 @@ const cerereConcediuDefs = gql`
     comentarii: String
   }
 
+  extend type Query {
+    ZileRamaseOdihna(AngajatId: Int): Int
+    ZileRamaseDeces(AngajatId: Int): Int
+    ZileRamaseMedical(AngajatId: Int): Int
+    ZileRamaseNeplatite(AngajatId: Int): Int
+  }
+
   extend type Mutation {
     insertCerereConcediu(input: CerereConcediu!): Boolean
   }
